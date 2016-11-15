@@ -10,9 +10,9 @@ myApp.factory('playerFactory', function(){
         {
          name: 'Penny Hardaway'
         }];
-        factory.getAll = function(callback){
-            callback(factory.players)
-        };
+    factory.getAll = function(callback){
+        callback(factory.players)
+    };
     factory.create = function(playerToCreate, callback){
            factory.players.push(playerToCreate);
            callback(factory.players);
@@ -22,8 +22,13 @@ myApp.factory('playerFactory', function(){
         callback(factory.players)
     };
     factory.addAss = function(assData, callback){
-        var playerToChange = factory.players[assData.playerindex];
+        var playerToChange = factory.players[assData.playerIndex];
         playerToChange.team = assData.team;
+        callback(factory.players)
+    };
+    factory.removeAss = function(idxOfPlayer, callback) {
+        var playerToChange = factory.players[idxOfPlayer];
+        playerToChange.team = "";
         callback(factory.players)
     };
     return factory;

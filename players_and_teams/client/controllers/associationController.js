@@ -27,16 +27,15 @@ myApp.controller('associationsController', ['playerFactory', 'teamFactory', func
 
 
 
-    this.deleteAssociation = function(index){
+    this.deleteAssociation = function(idx){
 
-        teamFactory.remove(index, function(data){
-            self.team=data;
+        console.log(idx);
+        playerFactory.removeAss(idx, function(data){
+            self.players = data;
+
         });
-        // teamFactory.remove(index, function(data){
-        //     self.team=data;
 
 
-        console.log(index);
 
     }
 
