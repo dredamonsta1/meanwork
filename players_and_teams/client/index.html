@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+      <title>players and teams</title>
+      <script type="text/javascript" src = 'bower_components/angular/angular.js'></script>
+      <script type="text/javascript" src = 'bower_components/angular-route/angular-route.js'></script>
+      <script type="text/javascript" src ='assets/app.js'></script>
+      <script type="text/javascript" src ='controllers/playersController.js'></script>
+      <script type="text/javascript" src ='factories/playerFactory.js'></script>
+      <script type="text/javascript" src ='factories/teamFactory.js'></script>
+        <script type="text/javascript" src='controllers/teamsController.js'></script>
+      <script type="text/javascript" src ='controllers/associationController.js'></script>
+    </head>
+    <body ng-app = 'myApp'>
+      <a href="#/players">Players</a> | <a href="#/teams">Teams</a> | <a href="#/associations">Associations</a>
+      <div ng-view = ''></div>
+
+    </body>
+</html>

@@ -1,0 +1,38 @@
+<div ng-controller = 'associationsController as assCntrl'>
+    <h2>Associations</h2>
+    <form ng-submit = 'assCntrl.makeAss()'>
+
+
+
+         <select ng-model = 'assCntrl.newAssociation.playerIndex'>
+             <option ng-repeat= 'player in assCntrl.players' value= {{$index}}>{{player.name}}</option>
+         </select>
+
+
+
+         <select ng-model="assCntrl.newAssociation.team">
+            <option ng-repeat = 'team in assCntrl.teams'>{{team.name}}</option>
+         </select>
+
+
+
+        <input type="submit" name="">
+    </form>
+    <table>
+        <thead>
+            <tr>
+
+                <td>Name</td>
+                <td>Team</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+
+        <tr ng-repeat = 'player in assCntrl.players'>
+            <td>{{player.name}}</td>
+            <td>{{player.team}}</td>
+            <td><button ng-click='assCntrl.deleteAssociation($index)'>Remove Association</button></td>
+        </tr>
+    </table>
+</div>
+

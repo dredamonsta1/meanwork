@@ -1,0 +1,22 @@
+<div ng-controller = 'playersController as playersCntrlr'>
+    <h2>Players</h2>
+    <form ng-submit="playersCntrlr.addPlayer()">
+        Name: <input type="text" ng-model="playersCntrlr.newPlayer.name">
+        <input type="submit" name="">
+
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+        <tr ng-repeat = 'player in playersCntrlr.players track by $index'>
+            <td>{{player.name}}</td>
+            <td><button ng-click="playersCntrlr.deletePlayer($index)">Remove Player</button></td>
+
+        </tr>
+    </table>
+
+</div>
